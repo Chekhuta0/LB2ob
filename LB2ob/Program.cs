@@ -147,19 +147,6 @@ static string? FindFile(string name)
     return null;
 }
 
-static string GetPath(int[,] next, int i, int j)
-{
-    if (i == j) return (i + 1).ToString();
-    if (next[i, j] == -1) return "-";
-    string path = (i + 1).ToString();
-    while (i != j)
-    {
-        i = next[i, j];
-        path += "->" + (i + 1);
-    }
-    return path;
-}
-
 static void PrintTable(string title, string[,] a)
 {
     int n = a.GetLength(0);
